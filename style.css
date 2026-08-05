@@ -1,51 +1,173 @@
-/* --- UNIVERSAL STYLES --- */
+/* ===========================
+   GOOGLE FONT (Optional)
+   =========================== */
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+*/
+
+/* ===========================
+   RESET
+   =========================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0e4d7;
-    font-family: 'Georgia', serif;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+
+    /* A slightly softer, warmer pastel gradient */
+    background: linear-gradient(135deg, #fff0f3, #ffe5ec, #fcf1eb);
+
+    font-family: 'Poppins', sans-serif;
     color: #5d4037;
     text-align: center;
-    margin: 0 15px;
-    /* Add some side margin for small screens */
-    overflow: hidden;
+    position: relative;
 }
 
-/* --- BASE STYLES (MOBILE-FIRST) --- */
+/* ===========================
+   DETAILED & VARIED FLOATING HEARTS
+   =========================== */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: -50px;
+    pointer-events: none;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+/* Layer 1: Drifting Upwards (10 Hearts) */
+body::before {
+    background-image:
+        /* Solid Deep Pink */
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff758f'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff758f'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"),
+        /* Tilted Left Marshmallow Pink */
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb3c6'%3E%3Cg transform='rotate(-20 12 12)'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/g%3E%3C/svg%3E"),
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb3c6'%3E%3Cg transform='rotate(-15 12 12)'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/g%3E%3C/svg%3E"),
+        /* Tilted Right Soft White/Pink */
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffccd5'%3E%3Cg transform='rotate(25 12 12)'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/g%3E%3C/svg%3E"),
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffccd5'%3E%3Cg transform='rotate(15 12 12)'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/g%3E%3C/svg%3E"),
+        /* Hollow / Outline Hearts */
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff758f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffb3c6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='rotate(-20 12 12)'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/g%3E%3C/svg%3E"),
+        /* Extra small accents */
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff758f'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb3c6'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+
+    /* Randomly scattered positions */
+    background-position: 5% 15%, 85% 10%, 25% 45%, 75% 65%, 15% 80%, 90% 85%, 45% 20%, 65% 90%, 10% 50%, 95% 40%;
+    /* Varied sizes from small to large */
+    background-size: 20px 20px, 35px 35px, 25px 25px, 15px 15px, 40px 40px, 28px 28px, 18px 18px, 22px 22px, 12px 12px, 14px 14px;
+
+    animation: driftUpSway 22s ease-in-out infinite alternate;
+    opacity: 0.7;
+}
+
+/* Layer 2: Drifting Downwards (8 Hearts) */
+body::after {
+    background-image:
+        /* Hollow Outline */
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffb3c6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='rotate(15 12 12)'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/g%3E%3C/svg%3E"),
+        /* Solid Tilted */
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff758f'%3E%3Cg transform='rotate(25 12 12)'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/g%3E%3C/svg%3E"),
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffccd5'%3E%3Cg transform='rotate(-25 12 12)'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/g%3E%3C/svg%3E"),
+        /* Classic Upright */
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb3c6'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff758f'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffb3c6'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"),
+        /* Extra small accents */
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffccd5'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff758f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E");
+
+    background-position: 80% 90%, 15% 25%, 60% 15%, 35% 85%, 20% 60%, 85% 45%, 50% 50%, 5% 95%;
+    background-size: 26px 26px, 16px 16px, 32px 32px, 20px 20px, 38px 38px, 14px 14px, 12px 12px, 24px 24px;
+
+    animation: driftDownSway 28s ease-in-out infinite alternate;
+    opacity: 0.85;
+}
+
+@keyframes driftUpSway {
+    0% {
+        transform: translateY(60px) translateX(-15px);
+    }
+
+    100% {
+        transform: translateY(-60px) translateX(15px);
+    }
+}
+
+@keyframes driftDownSway {
+    0% {
+        transform: translateY(-50px) translateX(20px);
+    }
+
+    100% {
+        transform: translateY(50px) translateX(-20px);
+    }
+}
+
+/* ===========================
+   HEADER
+   =========================== */
 
 h1 {
-    font-size: 2.2em;
-    /* Made slightly smaller for mobile */
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    margin-bottom: 8px;
+    color: #a45a70;
 }
 
+header p {
+    margin-top: 0;
+    color: #8d6e63;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* ===========================
+   RECORD PLAYER
+   =========================== */
+
 #record-player {
-    margin-top: 30px;
+    margin-top: 25px;
 }
 
 #disc {
-    width: 95vw;
-    height: 95vw;
-    max-width: 1000px;
-    /* Corrected max size for phones */
-    max-height: 1000px;
+    width: clamp(250px, 40vw, 450px);
+    aspect-ratio: 1;
     border-radius: 50%;
     cursor: pointer;
-    position: relative;
-    z-index: 10;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Thicker, softer border */
+    border: 12px solid #fff;
+    box-shadow: 0 15px 40px rgba(164, 90, 112, 0.15);
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
 #disc:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+    box-shadow: 0 20px 50px rgba(164, 90, 112, 0.25);
 }
 
 .spinning {
-    animation: spin 3s linear infinite;
+    animation:
+        spin 3.5s linear infinite,
+        glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes spin {
@@ -58,132 +180,72 @@ h1 {
     }
 }
 
+@keyframes glow {
+    from {
+        filter: drop-shadow(0 0 10px rgba(255, 179, 198, 0.4));
+    }
+
+    to {
+        filter: drop-shadow(0 0 35px rgba(255, 117, 143, 0.6));
+    }
+}
+
+/* ===========================
+   POPUP
+   =========================== */
+
 #popup-container {
     position: fixed;
-    top: 78%;
+    bottom: 30px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 240px;
-    /* Reduced max-width to make container smaller */
-    background-color: #ffffff;
-    padding: 12px;
-    /* Reduced padding slightly */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    opacity: 1;
-    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+    transform: translateX(-50%);
+
+    width: min(90%, 340px);
+
+    /* Frosted glass effect */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+
+    /* Soft edges */
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 20px;
+
+    box-shadow: 0 20px 50px rgba(164, 90, 112, 0.12);
+
+    transition: opacity .4s ease, transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 100;
 }
 
 #popup-container img {
-    max-width: 180px;
-    /* Adjusted image size for the new container */
-    border-radius: 8px;
+    width: 100%;
+    border-radius: 12px;
 }
 
 #popup-container .message {
-    font-size: 0.9em;
-    /* Made text a bit smaller */
-    color: #e85a71;
-    margin-top: 10px;
-    max-width: 200px;
-    /* Adjusted message width */
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 15px;
+    color: #c94f70;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
 .hidden {
     opacity: 0;
     pointer-events: none;
-    transform: translate(-50%, -30%);
+    transform: translateX(-50%) translateY(30px) scale(0.95);
 }
 
+/* ===========================
+   MOBILE
+   =========================== */
 
-/* --- TABLET STYLES (for screens wider than 768px) --- */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+    #popup-container {
+        bottom: 20px;
+    }
+
     h1 {
-        font-size: 3em;
+        font-size: 2rem;
     }
-
-    #disc {
-        max-width: 400px;
-        max-height: 400px;
-    }
-
-    #popup-container {
-        max-width: 380px;
-    }
-
-    #popup-container img {
-        max-width: 200px;
-    }
-
-    #popup-container .message {
-        font-size: 1em;
-        /* Restore font size */
-    }
-}
-
-
-/* --- DESKTOP STYLES (for screens wider than 1024px) --- */
-@media (min-width: 1024px) {
-    #record-player {
-        margin-top: 50px;
-    }
-
-    #disc {
-        width: 550px;
-        height: 550px;
-        max-width: 550px;
-        max-height: 550px;
-    }
-
-    #popup-container {
-        top: 75%;
-        max-width: 400px;
-    }
-}
-
-/* --- POP-UP STYLES (SIZED FOR PHONE) --- */
-#popup-container {
-    position: fixed;
-    top: 74%;
-    /* Positioned nicely below the disc on mobile */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    /* Flexible width for different phone sizes */
-    max-width: 250px;
-    /* A clean max-width for the container */
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    opacity: 1;
-    transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
-}
-
-#popup-container img {
-    max-width: 210px;
-    /* Image sized nicely within the container */
-    border-radius: 8px;
-}
-
-#popup-container .message {
-    font-size: 0.9em;
-    /* Legible but not too large */
-    color: #e85a71;
-    margin-top: 3px;
-    max-width: 200px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* This class handles the initial hiding and animation */
-.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transform: translate(-50%, -30%);
 }
