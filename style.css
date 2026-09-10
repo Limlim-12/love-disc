@@ -201,6 +201,10 @@ header p {
     transform: translateX(-50%);
 
     width: min(90%, 340px);
+    max-height: 75vh;
+    /* Prevents container from hitting top/bottom of screen */
+    overflow-y: auto;
+    /* Allows scrolling inside if the text is long */
 
     /* Frosted glass effect */
     background: rgba(255, 255, 255, 0.85);
@@ -217,8 +221,20 @@ header p {
     z-index: 100;
 }
 
+/* Hides the scrollbar for a cleaner look while still allowing scrolling */
+#popup-container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
 #popup-container img {
-    width: 100%;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 220px;
+    /* Caps the height on desktop */
+    width: auto;
+    /* Keeps the aspect ratio perfect */
     border-radius: 12px;
 }
 
@@ -242,7 +258,16 @@ header p {
 
 @media (max-width: 768px) {
     #popup-container {
-        bottom: 20px;
+        /* Uses viewport height (vh) to stay safely above the Safari menu */
+        bottom: 8vh;
+        padding: 15px;
+        /* Slightly tighter padding to save space */
+        max-height: 80vh;
+    }
+
+    #popup-container img {
+        max-height: 180px;
+        /* Makes the image smaller specifically on phones */
     }
 
     h1 {
