@@ -274,3 +274,9 @@ header p {
         font-size: 2rem;
     }
 }
+
+
+/* --- SLIDESHOW FADE EFFECT --- */
+#slideshow-img {
+    transition: opacity 0.5s ease-in-out;
+}

@@ -31,4 +31,35 @@ disc.addEventListener('click', () => {
         popup.classList.add('hidden');
     }
 });
-s
+
+/* ===========================
+   PHOTO SLIDESHOW LOGIC
+   =========================== */
+const slideshowImg = document.getElementById("slideshow-img");
+
+// Put all your image file names inside these quotes!
+const photos = [
+    "ross2.jpg", 
+    "ross1.jpg", 
+    "ross4.jpg",
+    "ross.jpg",
+    "ross3.jpg"
+]; 
+
+let currentPhotoIndex = 0;
+
+// This checks if the image exists, then starts a timer
+if (slideshowImg) {
+    setInterval(() => {
+        // 1. Fade the current image out
+        slideshowImg.style.opacity = 0;
+        
+        // 2. Wait half a second, swap the image source, then fade it back in
+        setTimeout(() => {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            slideshowImg.src = photos[currentPhotoIndex];
+            slideshowImg.style.opacity = 1;
+        }, 500); 
+        
+    }, 3500); // Changes the picture every 3.5 seconds
+}
